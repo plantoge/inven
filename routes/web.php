@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 // Route::get('/', [websiteController::class, 'login']);
+
+// https://github.com/nurarifin256/inventory-dan-pos-maju-jaya-motor/tree/main
