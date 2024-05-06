@@ -6,15 +6,12 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateMasterBarang extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('master_barang', function (Blueprint $table) {
             $table->char('BARANG_ID', 50)->primary();
+            $table->string('BARANG_KATEGORI')->nullable();
+            $table->string('BARANG_BRAND')->nullable();
             $table->string('BARANG_NOMOR')->nullable();
             $table->string('BARANG_KODE')->nullable();
             $table->string('BARANG_NAMA')->nullable();
