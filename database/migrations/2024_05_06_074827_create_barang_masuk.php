@@ -14,8 +14,15 @@ class CreateBarangMasuk extends Migration
     public function up()
     {
         Schema::create('barang_masuk', function (Blueprint $table) {
-            $table->id();
+            $table->char('BARMAS_ID', 50)->primary();
+            $table->char('BARMAS_BARANG_ID', 50)->nullable();
+            $table->char('BARMAS_RUANGAN_ID', 50)->nullable();
+            $table->string('BARMAS_NOMOR')->nullable();
+            $table->string('BARMAS_KODE')->nullable();
+            $table->dateTime('BARMAS_TANGGAL_MASUK')->nullable();
+            $table->bigInteger('BARMAS_QTY')->nullable();
             $table->timestamps();
+            $table->softDeletes($column = 'deleted_at', $precision = 0);
         });
     }
 

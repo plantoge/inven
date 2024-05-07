@@ -16,7 +16,8 @@ class CreatePerjalananBarang extends Migration
         Schema::create('perjalanan_barang', function (Blueprint $table) {
             $table->char('PERBAR_ID', 50)->primary();
             $table->string('PERBAR_BARANG_ID')->nullable();
-            $table->string('PERBAR_TANGGAL_MASUK')->nullable();
+            $table->dateTime('PERBAR_TANGGAL_MASUK')->nullable();
+            $table->dateTime('PERBAR_TANGGAL_PINDAH')->nullable();
             $table->string('PERBAR_RUANGAN_SEBELUM')->nullable();
             $table->string('PERBAR_RUANGAN_SEKARANG')->nullable();
             $table->timestamps();

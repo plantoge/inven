@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\auth\authController;
+use Faker\Factory;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [authController::class, 'login']);
+Route::post('/verifikasi-login', [authController::class, 'verifikasilogin']);
+Route::post('/verifikasi-pendaftaran', [authController::class, 'verifikasipendaftaran']);
+
+Route::get('/logout', [authController::class, 'logout']);
+Route::get('/testing', function(){
+    $faker = Factory::create('id_ID');
+    dd($faker->phoneNumber);
 });
 
-// Route::get('/', [websiteController::class, 'login']);
 
 // https://github.com/nurarifin256/inventory-dan-pos-maju-jaya-motor/tree/main

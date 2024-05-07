@@ -24,11 +24,13 @@ class User extends Authenticatable
     protected $keyType = 'string';
     protected $primaryKey = 'id';
 
-    protected $table = "proposal";
+    protected $table = "user";
     protected $fillable = [
         'id',
         'name',
+        'username',
         'email',
+        'hp',
         'email_verified_at',
         'password',
     ];
